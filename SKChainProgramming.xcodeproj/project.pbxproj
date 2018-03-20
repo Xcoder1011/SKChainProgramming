@@ -14,6 +14,7 @@
 		BC7232ED205FA6AE00E374D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC7232EB205FA6AE00E374D0 /* LaunchScreen.storyboard */; };
 		BC7232F0205FA6AE00E374D0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7232EF205FA6AE00E374D0 /* main.m */; };
 		BC7232F9205FA78000E374D0 /* SKButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7232F8205FA78000E374D0 /* SKButton.m */; };
+		BC7232FF206107F000E374D0 /* SKUIViewMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7232FE206107F000E374D0 /* SKUIViewMaker.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,8 @@
 		BC7232EF205FA6AE00E374D0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BC7232F7205FA78000E374D0 /* SKButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKButton.h; sourceTree = "<group>"; };
 		BC7232F8205FA78000E374D0 /* SKButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKButton.m; sourceTree = "<group>"; };
+		BC7232FD206107F000E374D0 /* SKUIViewMaker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKUIViewMaker.h; sourceTree = "<group>"; };
+		BC7232FE206107F000E374D0 /* SKUIViewMaker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKUIViewMaker.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,10 +81,28 @@
 		BC7232F6205FA75800E374D0 /* SKChainTools */ = {
 			isa = PBXGroup;
 			children = (
+				BC7232FB2060FD9800E374D0 /* SKChainCategory */,
+				BC7232FC2060FD9800E374D0 /* SKUIMaker */,
 				BC7232F7205FA78000E374D0 /* SKButton.h */,
 				BC7232F8205FA78000E374D0 /* SKButton.m */,
 			);
 			path = SKChainTools;
+			sourceTree = "<group>";
+		};
+		BC7232FB2060FD9800E374D0 /* SKChainCategory */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SKChainCategory;
+			sourceTree = "<group>";
+		};
+		BC7232FC2060FD9800E374D0 /* SKUIMaker */ = {
+			isa = PBXGroup;
+			children = (
+				BC7232FD206107F000E374D0 /* SKUIViewMaker.h */,
+				BC7232FE206107F000E374D0 /* SKUIViewMaker.m */,
+			);
+			path = SKUIMaker;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,6 +176,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC7232FF206107F000E374D0 /* SKUIViewMaker.m in Sources */,
 				BC7232E5205FA6AE00E374D0 /* ViewController.m in Sources */,
 				BC7232F0205FA6AE00E374D0 /* main.m in Sources */,
 				BC7232E2205FA6AE00E374D0 /* AppDelegate.m in Sources */,

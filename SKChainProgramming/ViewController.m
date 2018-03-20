@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "SKButton.h"
 
 @interface ViewController ()
 
@@ -16,13 +17,26 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+
+    SKButton *btn = [SKButton buttonWith:^(SKButton *btn) {
+        btn
+        .frame_(CGRectMake(0, 200, 100, 40))
+        .backgroundColor_([UIColor whiteColor])
+        .title_(@"ADD")
+        .clickAction_(^(UIButton *btn) {
+            //
+        })
+        .target_and_Action_(self, @selector(pressBtn:));
+    }];
+
+    
+    [self.view addSubview:btn];
 }
 
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)pressBtn:(UIButton *)btn {
+    
+    
 }
 
 
