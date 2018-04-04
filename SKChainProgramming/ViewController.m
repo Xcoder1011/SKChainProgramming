@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "SKButton.h"
+#import "UIButton+SKChain.h"
 
 @interface ViewController ()
 
@@ -18,25 +18,25 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    SKButton *btn = [SKButton buttonWith:^(SKButton *btn) {
+    UIButton *btn = [UIButton buttonWith:^(UIButton *btn) {
         btn
         .frame_(CGRectMake(0, 200, 100, 40))
-        .backgroundColor_([UIColor whiteColor])
+        .backgroundColor_([UIColor redColor])
         .title_(@"ADD")
+        .target_and_Action_(self, @selector(pressBtn1:))
         .clickAction_(^(UIButton *btn) {
-            //
-        })
-        .target_and_Action_(self, @selector(pressBtn:));
+            
+            NSLog(@"pressBtn %ld",btn.tag);
+        });
     }];
-
     
     [self.view addSubview:btn];
 }
 
 
--(void)pressBtn:(UIButton *)btn {
-    
-    
+-(void)pressBtn1:(UIButton *)btn {
+  
+    NSLog(@"pressBtn1 %ld",btn.tag);
 }
 
 
