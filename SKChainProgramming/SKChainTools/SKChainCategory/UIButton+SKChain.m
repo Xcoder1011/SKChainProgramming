@@ -52,18 +52,6 @@
     return setTitle;
 }
 
-- (UIButton *(^)(UIFont *))font_ {
-    
-    __weak typeof(self) weakself = self;
-    
-    return ^id (UIFont *titleFont) {
-        
-        weakself.titleLabel.font = titleFont;
-        
-        return weakself;
-    };
-}
-
 - (UIButton *(^)(UIColor *))color_ {
     
     __weak typeof(self) weakself = self;
@@ -76,6 +64,29 @@
     };
 }
 
+- (UIButton *(^)(NSString *, UIControlState))titleForState_ {
+    
+    __weak typeof(self) weakself = self;
+    
+    return ^id(NSString *title, UIControlState state) {
+        
+        [weakself setTitle:title forState:state];
+        
+        return weakself;
+    };
+}
+
+- (UIButton *(^)(UIColor *, UIControlState))colorForState_ {
+    
+    __weak typeof(self) weakself = self;
+    
+    return ^id(UIColor *color, UIControlState state) {
+        
+        [weakself setTitleColor:color forState:state];
+        
+        return weakself;
+    };
+}
 
 - (UIButton *(^)(UIColor *))backgroundColor_ {
     
@@ -84,6 +95,18 @@
     return ^id(UIColor *color) {
         
         [weakself setBackgroundColor:color];
+        
+        return weakself;
+    };
+}
+
+- (UIButton *(^)(UIFont *))font_ {
+    
+    __weak typeof(self) weakself = self;
+    
+    return ^id (UIFont *titleFont) {
+        
+        weakself.titleLabel.font = titleFont;
         
         return weakself;
     };

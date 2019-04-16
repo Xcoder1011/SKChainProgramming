@@ -12,9 +12,13 @@
 
 @property(nonatomic, copy, readonly) UIButton *(^frame_)(CGRect frame);
 
-@property(nonatomic, copy, readonly) UIButton *(^title_)(NSString *title);
+@property(nonatomic, copy, readonly) UIButton *(^title_)(NSString *title); // default UIControlStateNormal
 
-@property(nonatomic, copy, readonly) UIButton *(^color_)(UIColor *color);
+@property(nonatomic, copy, readonly) UIButton *(^color_)(UIColor *color); // default UIControlStateNormal
+
+@property(nonatomic, copy, readonly) UIButton *(^titleForState_)(NSString *title, UIControlState state);
+
+@property(nonatomic, copy, readonly) UIButton *(^colorForState_)(UIColor *color, UIControlState state);
 
 @property(nonatomic, copy, readonly) UIButton *(^backgroundColor_)(UIColor *color);
 

@@ -7,6 +7,7 @@
 //
 
 #import "UIView+SKChain.h"
+#import "HexColors.h"
 
 @implementation UIView (SKChain)
 
@@ -94,7 +95,6 @@
     };
 }
 
-
 - (UIView *(^)(UIColor *))tintColor_ {
     
     __weak typeof(self) weakself = self;
@@ -106,7 +106,6 @@
         return weakself;
     };
 }
-
 
 - (UIView *(^)(UIColor *))backgroundColor_ {
     
@@ -120,6 +119,17 @@
     };
 }
 
+- (UILabel *(^)(NSString *))backgroundColorHexStr_ {
+    
+    __weak typeof(self) weakself = self;
+    
+    return ^id (NSString *colorHex) {
+        
+        weakself.backgroundColor_([UIColor colorWithHexString:colorHex]);
+        
+        return weakself;
+    };
+}
 
 - (UIView *(^)(BOOL))autoresizesSubviews_ {
     
@@ -168,7 +178,6 @@
         return weakself;
     };
 }
-
 
 - (UIView *(^)(BOOL))exclusiveTouch_ {
     

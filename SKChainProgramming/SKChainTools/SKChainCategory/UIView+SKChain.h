@@ -28,6 +28,8 @@
 
 @property(nonatomic, copy, readonly) UIView * (^backgroundColor_)(UIColor * backgroundColor);
 
+@property(nonatomic, copy, readonly) UILabel *(^backgroundColorHexStr_)(NSString * colorHex);
+
 @property(nonatomic, copy, readonly) UIView * (^autoresizesSubviews_)(BOOL autoresizesSubviews);
 
 @property(nonatomic, copy, readonly) UIView * (^clipsToBounds_)(BOOL clipsToBounds);
@@ -41,6 +43,5 @@
 @property(nonatomic, copy, readonly) UIView * (^multipleTouchEnabled_)(BOOL multipleTouchEnabled);
 
 @property(nonatomic, copy, readonly) UIView * (^contentMode_)(UIViewContentMode contentMode);
-
 
 @end

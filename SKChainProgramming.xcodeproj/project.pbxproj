@@ -14,8 +14,10 @@
 		BC7232ED205FA6AE00E374D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC7232EB205FA6AE00E374D0 /* LaunchScreen.storyboard */; };
 		BC7232F0205FA6AE00E374D0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7232EF205FA6AE00E374D0 /* main.m */; };
 		BC7232F9205FA78000E374D0 /* SKButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7232F8205FA78000E374D0 /* SKButton.m */; };
-		BCB5B59E2074C25A00E865DA /* UIButton+SKChain.m in Sources */ = {isa = PBXBuildFile; fileRef = BCB5B59D2074C25A00E865DA /* UIButton+SKChain.m */; };
+		BC892D53226570020059BB07 /* UIButton+SKChain.m in Sources */ = {isa = PBXBuildFile; fileRef = BC892D51226570020059BB07 /* UIButton+SKChain.m */; };
+		BC892D5922657DB50059BB07 /* HexColors.m in Sources */ = {isa = PBXBuildFile; fileRef = BC892D5822657DB50059BB07 /* HexColors.m */; };
 		BCB5B5A12074D31D00E865DA /* UIView+SKChain.m in Sources */ = {isa = PBXBuildFile; fileRef = BCB5B5A02074D31D00E865DA /* UIView+SKChain.m */; };
+		BCC4C48A2179724D00E19785 /* UILabel+SKChain.m in Sources */ = {isa = PBXBuildFile; fileRef = BCC4C4892179724D00E19785 /* UILabel+SKChain.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,10 +33,14 @@
 		BC7232EF205FA6AE00E374D0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BC7232F7205FA78000E374D0 /* SKButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKButton.h; sourceTree = "<group>"; };
 		BC7232F8205FA78000E374D0 /* SKButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKButton.m; sourceTree = "<group>"; };
-		BCB5B59C2074C25A00E865DA /* UIButton+SKChain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+SKChain.h"; sourceTree = "<group>"; };
-		BCB5B59D2074C25A00E865DA /* UIButton+SKChain.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+SKChain.m"; sourceTree = "<group>"; };
+		BC892D51226570020059BB07 /* UIButton+SKChain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+SKChain.m"; sourceTree = "<group>"; };
+		BC892D52226570020059BB07 /* UIButton+SKChain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+SKChain.h"; sourceTree = "<group>"; };
+		BC892D5722657DB50059BB07 /* HexColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HexColors.h; sourceTree = "<group>"; };
+		BC892D5822657DB50059BB07 /* HexColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HexColors.m; sourceTree = "<group>"; };
 		BCB5B59F2074D31D00E865DA /* UIView+SKChain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+SKChain.h"; sourceTree = "<group>"; };
 		BCB5B5A02074D31D00E865DA /* UIView+SKChain.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+SKChain.m"; sourceTree = "<group>"; };
+		BCC4C4882179724D00E19785 /* UILabel+SKChain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UILabel+SKChain.h"; sourceTree = "<group>"; };
+		BCC4C4892179724D00E19785 /* UILabel+SKChain.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UILabel+SKChain.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +93,8 @@
 				BCB5B59B2074C24700E865DA /* SKChainCategory */,
 				BC7232F7205FA78000E374D0 /* SKButton.h */,
 				BC7232F8205FA78000E374D0 /* SKButton.m */,
+				BC892D5722657DB50059BB07 /* HexColors.h */,
+				BC892D5822657DB50059BB07 /* HexColors.m */,
 			);
 			path = SKChainTools;
 			sourceTree = "<group>";
@@ -94,8 +102,10 @@
 		BCB5B59B2074C24700E865DA /* SKChainCategory */ = {
 			isa = PBXGroup;
 			children = (
-				BCB5B59C2074C25A00E865DA /* UIButton+SKChain.h */,
-				BCB5B59D2074C25A00E865DA /* UIButton+SKChain.m */,
+				BC892D52226570020059BB07 /* UIButton+SKChain.h */,
+				BC892D51226570020059BB07 /* UIButton+SKChain.m */,
+				BCC4C4882179724D00E19785 /* UILabel+SKChain.h */,
+				BCC4C4892179724D00E19785 /* UILabel+SKChain.m */,
 				BCB5B59F2074D31D00E865DA /* UIView+SKChain.h */,
 				BCB5B5A02074D31D00E865DA /* UIView+SKChain.m */,
 			);
@@ -133,7 +143,7 @@
 				TargetAttributes = {
 					BC7232DC205FA6AE00E374D0 = {
 						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -175,8 +185,10 @@
 			files = (
 				BC7232E5205FA6AE00E374D0 /* ViewController.m in Sources */,
 				BC7232F0205FA6AE00E374D0 /* main.m in Sources */,
+				BC892D53226570020059BB07 /* UIButton+SKChain.m in Sources */,
+				BCC4C48A2179724D00E19785 /* UILabel+SKChain.m in Sources */,
 				BCB5B5A12074D31D00E865DA /* UIView+SKChain.m in Sources */,
-				BCB5B59E2074C25A00E865DA /* UIButton+SKChain.m in Sources */,
+				BC892D5922657DB50059BB07 /* HexColors.m in Sources */,
 				BC7232E2205FA6AE00E374D0 /* AppDelegate.m in Sources */,
 				BC7232F9205FA78000E374D0 /* SKButton.m in Sources */,
 			);
@@ -312,13 +324,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LH66V26Z7L;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = UF53LK3476;
 				INFOPLIST_FILE = SKChainProgramming/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = wushangkun.SKChainProgramming;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wushangkun.SKChainProgramming;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = OwenLin_Dev;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -327,13 +340,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LH66V26Z7L;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = SKChainProgramming/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = wushangkun.SKChainProgramming;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wushangkun.SKChainProgramming;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
