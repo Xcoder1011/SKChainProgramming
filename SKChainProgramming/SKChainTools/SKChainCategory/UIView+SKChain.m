@@ -7,7 +7,7 @@
 //
 
 #import "UIView+SKChain.h"
-#import "HexColors.h"
+#import "Colours.h"
 
 @implementation UIView (SKChain)
 
@@ -125,8 +125,8 @@
     
     return ^id (NSString *colorHex) {
         
-        weakself.backgroundColor_([UIColor colorWithHexString:colorHex]);
-        
+        weakself.backgroundColor_([UIColor colorFromHexString:colorHex]);
+
         return weakself;
     };
 }

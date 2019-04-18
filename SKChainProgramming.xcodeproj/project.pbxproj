@@ -15,7 +15,8 @@
 		BC7232F0205FA6AE00E374D0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7232EF205FA6AE00E374D0 /* main.m */; };
 		BC7232F9205FA78000E374D0 /* SKButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7232F8205FA78000E374D0 /* SKButton.m */; };
 		BC892D53226570020059BB07 /* UIButton+SKChain.m in Sources */ = {isa = PBXBuildFile; fileRef = BC892D51226570020059BB07 /* UIButton+SKChain.m */; };
-		BC892D5922657DB50059BB07 /* HexColors.m in Sources */ = {isa = PBXBuildFile; fileRef = BC892D5822657DB50059BB07 /* HexColors.m */; };
+		BC892D5C22659F9E0059BB07 /* UIImageView+SKChain.m in Sources */ = {isa = PBXBuildFile; fileRef = BC892D5B22659F9E0059BB07 /* UIImageView+SKChain.m */; };
+		BC892D6D2268204E0059BB07 /* Colours.m in Sources */ = {isa = PBXBuildFile; fileRef = BC892D6C2268204E0059BB07 /* Colours.m */; };
 		BCB5B5A12074D31D00E865DA /* UIView+SKChain.m in Sources */ = {isa = PBXBuildFile; fileRef = BCB5B5A02074D31D00E865DA /* UIView+SKChain.m */; };
 		BCC4C48A2179724D00E19785 /* UILabel+SKChain.m in Sources */ = {isa = PBXBuildFile; fileRef = BCC4C4892179724D00E19785 /* UILabel+SKChain.m */; };
 /* End PBXBuildFile section */
@@ -35,8 +36,11 @@
 		BC7232F8205FA78000E374D0 /* SKButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKButton.m; sourceTree = "<group>"; };
 		BC892D51226570020059BB07 /* UIButton+SKChain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+SKChain.m"; sourceTree = "<group>"; };
 		BC892D52226570020059BB07 /* UIButton+SKChain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+SKChain.h"; sourceTree = "<group>"; };
-		BC892D5722657DB50059BB07 /* HexColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HexColors.h; sourceTree = "<group>"; };
-		BC892D5822657DB50059BB07 /* HexColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HexColors.m; sourceTree = "<group>"; };
+		BC892D5A22659F9E0059BB07 /* UIImageView+SKChain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageView+SKChain.h"; sourceTree = "<group>"; };
+		BC892D5B22659F9E0059BB07 /* UIImageView+SKChain.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+SKChain.m"; sourceTree = "<group>"; };
+		BC892D5E2265A4130059BB07 /* SKChainHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKChainHeader.h; sourceTree = "<group>"; };
+		BC892D6B2268204D0059BB07 /* Colours.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Colours.h; sourceTree = "<group>"; };
+		BC892D6C2268204E0059BB07 /* Colours.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Colours.m; sourceTree = "<group>"; };
 		BCB5B59F2074D31D00E865DA /* UIView+SKChain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+SKChain.h"; sourceTree = "<group>"; };
 		BCB5B5A02074D31D00E865DA /* UIView+SKChain.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+SKChain.m"; sourceTree = "<group>"; };
 		BCC4C4882179724D00E19785 /* UILabel+SKChain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UILabel+SKChain.h"; sourceTree = "<group>"; };
@@ -93,8 +97,8 @@
 				BCB5B59B2074C24700E865DA /* SKChainCategory */,
 				BC7232F7205FA78000E374D0 /* SKButton.h */,
 				BC7232F8205FA78000E374D0 /* SKButton.m */,
-				BC892D5722657DB50059BB07 /* HexColors.h */,
-				BC892D5822657DB50059BB07 /* HexColors.m */,
+				BC892D6B2268204D0059BB07 /* Colours.h */,
+				BC892D6C2268204E0059BB07 /* Colours.m */,
 			);
 			path = SKChainTools;
 			sourceTree = "<group>";
@@ -102,10 +106,13 @@
 		BCB5B59B2074C24700E865DA /* SKChainCategory */ = {
 			isa = PBXGroup;
 			children = (
+				BC892D5E2265A4130059BB07 /* SKChainHeader.h */,
 				BC892D52226570020059BB07 /* UIButton+SKChain.h */,
 				BC892D51226570020059BB07 /* UIButton+SKChain.m */,
 				BCC4C4882179724D00E19785 /* UILabel+SKChain.h */,
 				BCC4C4892179724D00E19785 /* UILabel+SKChain.m */,
+				BC892D5A22659F9E0059BB07 /* UIImageView+SKChain.h */,
+				BC892D5B22659F9E0059BB07 /* UIImageView+SKChain.m */,
 				BCB5B59F2074D31D00E865DA /* UIView+SKChain.h */,
 				BCB5B5A02074D31D00E865DA /* UIView+SKChain.m */,
 			);
@@ -188,7 +195,8 @@
 				BC892D53226570020059BB07 /* UIButton+SKChain.m in Sources */,
 				BCC4C48A2179724D00E19785 /* UILabel+SKChain.m in Sources */,
 				BCB5B5A12074D31D00E865DA /* UIView+SKChain.m in Sources */,
-				BC892D5922657DB50059BB07 /* HexColors.m in Sources */,
+				BC892D6D2268204E0059BB07 /* Colours.m in Sources */,
+				BC892D5C22659F9E0059BB07 /* UIImageView+SKChain.m in Sources */,
 				BC7232E2205FA6AE00E374D0 /* AppDelegate.m in Sources */,
 				BC7232F9205FA78000E374D0 /* SKButton.m in Sources */,
 			);

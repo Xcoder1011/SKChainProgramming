@@ -7,8 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "UIButton+SKChain.h"
-#import "UILabel+SKChain.h"
+#import "SKChainHeader.h"
 
 @interface ViewController ()
 
@@ -19,20 +18,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    UIButton *btn = [UIButton buttonWith:^(UIButton *btn) {
-        btn
-        .frame_(CGRectMake(30, 200, 100, 40))
-        .backgroundColor_([UIColor redColor])
-        .conerRadius_(20)
-        .title_(@"ADD")
-        .target_and_Action_(self, @selector(pressBtn1:))
-        .clickAction_(^(UIButton *btn) {
-            NSLog(@"pressBtn %zd",btn.tag);
-        });
-    }];
-    [self.view addSubview:btn];
-    
-    
     UILabel *label = [UILabel labelWith:^(UILabel *label) {
         label
         .text_(@"SKChain")
@@ -42,6 +27,27 @@
         .backgroundColorHexStr_(@"333333");
     }];
     [self.view addSubview:label];
+    
+    UIButton *btn = [UIButton buttonWith:^(UIButton *btn) {
+        btn
+        .frame_(CGRectMake(30, 200, 100, 40))
+        .backgroundColor_([UIColor redColor])
+        .conerRadius_(20)
+        .title_(@"ADD")
+        .titleForState_(@"has add", UIControlStateHighlighted)
+        .target_and_Action_(self, @selector(pressBtn1:))
+        .clickAction_(^(UIButton *btn) {
+            NSLog(@"pressBtn %zd",btn.tag);
+        });
+    }];
+    [self.view addSubview:btn];
+    
+    UIImageView *imageView = [UIImageView imageViewWith:^(UIImageView *imageView) {
+        imageView
+        .frame_(CGRectMake(30, 300, 200, 90))
+        .backgroundColor_([UIColor blueColor]);
+    }];
+    [self.view addSubview:imageView];
 }
 
 -(void)pressBtn1:(UIButton *)btn {

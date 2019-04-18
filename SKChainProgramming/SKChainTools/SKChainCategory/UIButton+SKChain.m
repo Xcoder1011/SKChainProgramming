@@ -8,6 +8,7 @@
 
 #import "UIButton+SKChain.h"
 #import <objc/runtime.h>
+#import "Colours.h"
 
 @interface UIButton ()
 
@@ -17,7 +18,7 @@
 
 @implementation UIButton (SKChain)
 
-+ (instancetype)buttonWith:(void(^)(UIButton *btn))initblock {
++ (instancetype)buttonWith:(void (^)(UIButton *btn))initblock {
     
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
     if (initblock) {
@@ -95,6 +96,34 @@
     return ^id(UIColor *color) {
         
         [weakself setBackgroundColor:color];
+        
+        UIColor *hightColor = [color darken:0.2];
+        
+        weakself.backgroundColorForState_(hightColor, UIControlStateHighlighted);
+        
+        return weakself;
+    };
+}
+
+- (UIButton *(^)(UIColor *, UIControlState))backgroundColorForState_ {
+    
+    __weak typeof(self) weakself = self;
+    
+    return ^id(UIColor *color, UIControlState state) {
+        
+         [weakself setBackgroundImage:[UIButton createImageWithColor:color] forState:state];
+        
+        return weakself;
+    };
+}
+
+- (UIButton *(^)(NSString *, UIControlState))backgroundImageForState_ {
+    
+    __weak typeof(self) weakself = self;
+    
+    return ^id(NSString *name, UIControlState state) {
+        
+        [weakself setBackgroundImage:[UIImage imageNamed:name] forState:state];
         
         return weakself;
     };
@@ -205,6 +234,19 @@
         
         self.clickAction(btn);
     }
+}
+
+/// UIColor 转UIImage
++ (UIImage*)createImageWithColor:(UIColor *)color
+{
+    CGRect rect=CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetFillColorWithColor(context, [color CGColor]);
+    CGContextFillRect(context, rect);
+    UIImage *theImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return theImage;
 }
 
 @end

@@ -1,105 +1,152 @@
 //
-//  UILabel+SKChain.m
+//  UIImageView+SKChain.m
 //  SKChainProgramming
 //
 //  Created by shangkun on 2018/10/19.
 //  Copyright © 2018年 wushangkun. All rights reserved.
 //
 
-#import "UILabel+SKChain.h"
+#import "UIImageView+SKChain.h"
 #import "Colours.h"
 
-@implementation UILabel (SKChain)
+@implementation UIImageView (SKChain)
 
-+ (instancetype)labelWith:(void(^)(UILabel *label))initblock {
++ (instancetype)imageViewWith:(void (^)(UIImageView *imageView))initblock {
     
-    UILabel *label = [[UILabel alloc] init];
+    UIImageView *imageV = [[UIImageView alloc] init];
     if (initblock) {
-        initblock(label);
+        initblock(imageV);
     }
-    return label;
+    return imageV;
 }
 
-- (void (^)(NSString *text))getText {
-    
-    void (^textBlock)(NSString *) = ^(NSString *text) {
-        
-        [self setText:text];
-    };
-    
-    return textBlock;
-}
-
-- (UILabel *(^)(CGRect))frame_ {
+- (UIImageView *(^)(UIImage *))image_ {
     
     __weak typeof(self) weakself = self;
     
-    return ^id (CGRect rect) {
+    return ^ id (UIImage *image) {
         
-        [weakself setFrame:rect];
+        weakself.image = image;
         
         return weakself;
     };
 }
 
-- (UILabel *(^)(NSString *))text_ {
+- (UIImageView *(^)(NSString *))imageName_ {
     
     __weak typeof(self) weakself = self;
     
-    UILabel *(^setText)(NSString *) = ^(NSString *text) {
+    return ^ id (NSString *imageName) {
         
-        [weakself setText:text];
-        
-        return weakself;
-    };
-    return setText;
-}
-
-- (UILabel *(^)(UIColor *))textColor_ {
-    
-    __weak typeof(self) weakself = self;
-
-    return ^id(UIColor *textColor) {
-      
-        [weakself setTextColor:textColor];
+        [weakself setImage:[UIImage imageNamed:imageName]];
         
         return weakself;
     };
 }
 
-- (UILabel *(^)(NSString *))textColorHexStr_ {
+- (UIImageView * (^)(BOOL))opaque_ {
     
     __weak typeof(self) weakself = self;
     
-    return ^id (NSString *colorHex) {
+    return ^ id (BOOL opaque) {
         
-        weakself.textColor_([UIColor colorFromHexString:colorHex]);
+        weakself.opaque = opaque;
         
         return weakself;
     };
 }
 
-- (UILabel *(^)(UIFont *))font_ {
+- (UIImageView *(^)(UIView *))maskView_ {
     
     __weak typeof(self) weakself = self;
-
-    return ^id (UIFont *font) {
+    
+    return ^ id (UIView *mask) {
         
-        weakself.font = font;
-        
-        weakself.textAlignment = NSTextAlignmentLeft;
+        weakself.maskView = mask;
         
         return weakself;
     };
 }
 
-- (UILabel *(^)(CGFloat))fontSize {
+- (UIImageView *(^)(CGRect))frame_ {
     
     __weak typeof(self) weakself = self;
     
-    return ^id (CGFloat fontSize) {
+    return ^ id (CGRect frame) {
         
-        weakself.font_([UIFont systemFontOfSize:fontSize]);
+        weakself.frame = frame;
+        
+        return weakself;
+    };
+}
+
+- (UIImageView *(^)(BOOL))hidden_ {
+    
+    __weak typeof(self) weakself = self;
+    
+    return ^ id (BOOL hidden) {
+        
+        weakself.hidden = hidden;
+        
+        return weakself;
+    };
+}
+
+- (UIImageView *(^)(NSInteger))tag_ {
+    
+    __weak typeof(self) weakself = self;
+    
+    return ^ id (NSInteger tag) {
+        
+        weakself.tag = tag;
+        
+        return weakself;
+    };
+}
+
+- (UIImageView *(^)(CGRect))bounds_ {
+    
+    __weak typeof(self) weakself = self;
+    
+    return ^ id (CGRect bounds) {
+        
+        weakself.bounds = bounds;
+        
+        return weakself;
+    };
+}
+
+- (UIImageView *(^)(CGFloat))alpha_ {
+    
+    __weak typeof(self) weakself = self;
+    
+    return ^ id (CGFloat alpha) {
+        
+        weakself.alpha = alpha;
+        
+        return weakself;
+    };
+}
+
+- (UIImageView *(^)(UIColor *))tintColor_ {
+    
+    __weak typeof(self) weakself = self;
+    
+    return ^ id (UIColor * tintColor) {
+        
+        weakself.tintColor = tintColor;
+        
+        return weakself;
+    };
+}
+
+- (UIImageView *(^)(UIColor *))backgroundColor_ {
+    
+    __weak typeof(self) weakself = self;
+    
+    return ^ id (UIColor * backgroundColor) {
+        
+        weakself.backgroundColor = backgroundColor;
         
         return weakself;
     };
@@ -117,119 +164,7 @@
     };
 }
 
-- (UILabel *(^)(NSTextAlignment))textAlignment_ {
-    
-    __weak typeof(self) weakself = self;
-    
-    return ^id (NSTextAlignment alignment) {
-        
-        weakself.textAlignment = alignment;
-        
-        return weakself;
-    };
-}
-
-- (UILabel *(^)(CGFloat))conerRadius_ {
-    
-    __weak typeof(self) weakself = self;
-    
-    return ^id(CGFloat coner) {
-        
-        weakself.clipsToBounds = YES;
-        
-        weakself.layer.cornerRadius = coner;
-        
-        return weakself;
-    };
-}
-
-- (UILabel * (^)(BOOL))opaque_ {
-    
-    __weak typeof(self) weakself = self;
-    
-    return ^ id (BOOL opaque) {
-        
-        weakself.opaque = opaque;
-        
-        return weakself;
-    };
-}
-
-- (UILabel *(^)(BOOL))hidden_ {
-    
-    __weak typeof(self) weakself = self;
-    
-    return ^ id (BOOL hidden) {
-        
-        weakself.hidden = hidden;
-        
-        return weakself;
-    };
-}
-
-- (UILabel *(^)(NSInteger))tag_ {
-    
-    __weak typeof(self) weakself = self;
-    
-    return ^ id (NSInteger tag) {
-        
-        weakself.tag = tag;
-        
-        return weakself;
-    };
-}
-
-- (UILabel *(^)(CGRect))bounds_ {
-    
-    __weak typeof(self) weakself = self;
-    
-    return ^ id (CGRect bounds) {
-        
-        weakself.bounds = bounds;
-        
-        return weakself;
-    };
-}
-
-- (UILabel *(^)(CGFloat))alpha_ {
-    
-    __weak typeof(self) weakself = self;
-    
-    return ^ id (CGFloat alpha) {
-        
-        weakself.alpha = alpha;
-        
-        return weakself;
-    };
-}
-
-- (UILabel *(^)(UIColor *))tintColor_ {
-    
-    __weak typeof(self) weakself = self;
-    
-    return ^ id (UIColor * tintColor) {
-        
-        weakself.tintColor = tintColor;
-        
-        return weakself;
-    };
-}
-
-
-- (UILabel *(^)(UIColor *))backgroundColor_ {
-    
-    __weak typeof(self) weakself = self;
-    
-    return ^ id (UIColor * backgroundColor) {
-        
-        weakself.backgroundColor = backgroundColor;
-        
-        return weakself;
-    };
-}
-
-
-- (UILabel *(^)(BOOL))autoresizesSubviews_ {
+- (UIImageView *(^)(BOOL))autoresizesSubviews_ {
     
     __weak typeof(self) weakself = self;
     
@@ -241,7 +176,7 @@
     };
 }
 
-- (UILabel *(^)(BOOL))clipsToBounds_ {
+- (UIImageView *(^)(BOOL))clipsToBounds_ {
     
     __weak typeof(self) weakself = self;
     
@@ -253,7 +188,7 @@
     };
 }
 
-- (UILabel *(^)(CGAffineTransform))transform_ {
+- (UIImageView *(^)(CGAffineTransform))transform_ {
     
     __weak typeof(self) weakself = self;
     
@@ -265,7 +200,7 @@
     };
 }
 
-- (UILabel *(^)(BOOL))userInteractionEnabled_ {
+- (UIImageView *(^)(BOOL))userInteractionEnabled_ {
     
     __weak typeof(self) weakself = self;
     
@@ -277,8 +212,7 @@
     };
 }
 
-
-- (UILabel *(^)(BOOL))exclusiveTouch_ {
+- (UIImageView *(^)(BOOL))exclusiveTouch_ {
     
     __weak typeof(self) weakself = self;
     
@@ -290,7 +224,7 @@
     };
 }
 
-- (UILabel *(^)(BOOL))multipleTouchEnabled_ {
+- (UIImageView *(^)(BOOL))multipleTouchEnabled_ {
     
     __weak typeof(self) weakself = self;
     
@@ -302,7 +236,7 @@
     };
 }
 
-- (UILabel *(^)(UIViewContentMode))contentMode_ {
+- (UIImageView *(^)(UIViewContentMode))contentMode_ {
     
     __weak typeof(self) weakself = self;
     
@@ -313,6 +247,5 @@
         return weakself;
     };
 }
-
 
 @end

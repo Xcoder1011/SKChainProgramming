@@ -10,6 +10,8 @@
 
 @interface UIButton (SKChain)
 
++ (instancetype)buttonWith:(void(^)(UIButton *btn))initblock;
+
 @property(nonatomic, copy, readonly) UIButton *(^frame_)(CGRect frame);
 
 @property(nonatomic, copy, readonly) UIButton *(^title_)(NSString *title); // default UIControlStateNormal
@@ -20,7 +22,11 @@
 
 @property(nonatomic, copy, readonly) UIButton *(^colorForState_)(UIColor *color, UIControlState state);
 
+@property(nonatomic, copy, readonly) UIButton *(^backgroundColorForState_)(UIColor *color, UIControlState state);
+
 @property(nonatomic, copy, readonly) UIButton *(^backgroundColor_)(UIColor *color);
+
+@property(nonatomic, copy, readonly) UIButton *(^backgroundImageForState_)(NSString *backgroundImageName, UIControlState state);
 
 @property(nonatomic, copy, readonly) UIButton *(^font_)(UIFont *font);
 
@@ -35,8 +41,5 @@
 @property(nonatomic, copy, readonly) UIButton *(^target_and_Action_)(id target , SEL action);
 
 @property(nonatomic, copy, readonly) UIButton *(^clickAction_)(void(^clickAction)(UIButton *btn));
-
-+ (instancetype)buttonWith:(void(^)(UIButton *btn))initblock;
-
 
 @end
